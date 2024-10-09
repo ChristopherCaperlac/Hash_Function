@@ -1,8 +1,8 @@
 /*
 CSE 310 Hash Function DIY Contest
 Instructor: Yiran "Lawrence" Luo
-Your name(s):
-Your team alias: 
+Your name(s): David Brown, Christopher Caperlac
+Your team alias: Key and Value DC
 */
 
 #include <iostream>
@@ -37,6 +37,8 @@ int main() {
     // which puts out the placeholders only.
 
     // Your time to shine starts now
+
+    
 
     cout << "==== Printing the contents of the first 5 slots ====" << endl;
 

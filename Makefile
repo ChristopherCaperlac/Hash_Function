@@ -10,6 +10,9 @@ clean:
 run:
 	./encoder < ./inputs/sample_input.txt
 
+demo:
+	./demoEncoder < ./inputs/sample_input.txt
+
 # Do "git clone repositoryURL" to get your own local copy 
 
 # Update can cause conflicts with your directory
