@@ -16,8 +16,7 @@ run:
 update:
 	git pull origin main
 
-# This is a non descriptive commit 
-save:
-	git add .
-	git commit -m 'default message'
-	git push origin main
+# This is the structure of a commit 
+# git add .
+# git commit -m 'your message here'
+# git push origin main
