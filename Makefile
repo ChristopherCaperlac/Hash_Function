@@ -19,5 +19,5 @@ update:
 # This is a non descriptive commit 
 save:
 	git add .
-	git commit
+	git commit -m 'default message'
 	git push origin main
