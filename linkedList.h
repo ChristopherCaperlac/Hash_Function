@@ -32,7 +32,9 @@ class LinkedList {
 
         void addToFront(std::string);
 
+        int getSize();
         std::string getValue(std::string);
         bool containsValue(std::string);
+        void printValues();
 
 };

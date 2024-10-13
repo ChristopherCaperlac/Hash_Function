@@ -1,3 +1,4 @@
+#include <iostream>
 #include "linkedList.h"
 
 Node::Node() {
@@ -42,6 +43,10 @@ void LinkedList::addToFront(std::string inputString) {
 
 }
 
+int LinkedList::getSize() {
+  return this->size;
+}
+
 std::string LinkedList::getValue(std::string keyString) {
 
   Node* currentNode = this->headNode;
@@ -71,5 +76,16 @@ bool LinkedList::containsValue(std::string keyString) {
   }
 
   return false;
+
+}
+
+void LinkedList::printValues() {
+
+  Node* currentNode = this->headNode;
+
+  for (int i = 0; i < size; i++) {
+    std::cout << currentNode->data << " ";
+    currentNode = currentNode->nextNode;
+  }
 
 }
