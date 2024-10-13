@@ -14,6 +14,8 @@ class Node {
 
         std::string getData();
 
+    friend class LinkedList;
+
 };
 
 class LinkedList {
@@ -31,5 +33,6 @@ class LinkedList {
         void addToFront(std::string);
 
         std::string getValue(std::string);
+        bool containsValue(std::string);
 
 };
