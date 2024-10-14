@@ -1,4 +1,6 @@
 #include "hashMap.h"
+#include <cmath>
+
 
 HashMap::HashMap(int numOfSlots) {
   this->slotList = new LinkedList*[numOfSlots];
@@ -10,14 +12,25 @@ HashMap::HashMap(int numOfSlots) {
 
 HashMap::~HashMap() {
   for (int i = 0; i < numOfSlots; i++) {
-    delete[] this->slotList[i];
+    if(this->slotList[i] != nullptr) {
+      delete this->slotList[i];
+    }
   }
   delete[] this->slotList;
+  this->slotList = nullptr;
 }
 
-int HashMap::hashFunction(std::string inputString) {
-  // TODO: Implement function
-  return 0;
+int HashMap::hashFunction(std::string text) {
+  unsigned long hashValue = 17;
+
+  for (char c : text) {
+    hashValue = hashValue ^ c;
+  }
+
+  int textLength = text.size();
+  hashValue += (13 * textLength);
+
+  return hashValue % numOfSlots;
 }
 
 void HashMap::put(std::string inputString) {
@@ -37,6 +50,23 @@ int HashMap::getSlotSize(int slotIndex) {
 }
 
 double HashMap::getStdDev() {
-  // TODO: Implement function
-  return 0;
+  double mean = 0;
+  double variance = 0;
+  double stdDev = 0;
+
+  // Calculating Mean of Slots
+  for(int i = 0; i < numOfSlots; ++i){
+    mean += double(getSlotSize(i));
+  }
+  mean /= numOfSlots;
+
+  // Variance
+  for(int i = 0; i < numOfSlots; ++i){
+    variance += pow(getSlotSize(i) - mean, 2.0);
+  }
+  variance /= numOfSlots;
+  // Standard Deviation
+  stdDev = sqrt(variance);
+
+  return stdDev;
 }
