@@ -23,7 +23,7 @@ LinkedList::LinkedList() {
 LinkedList::~LinkedList() {
 
   Node* currentNode = this->headNode;
-  while (currentNode != nullptr) {
+  for (int i = 0; i < size; i++) {
     Node* nextNode = currentNode->nextNode;
     delete currentNode;
     currentNode = nextNode;

@@ -18,6 +18,7 @@ class HashMap {
     ~HashMap();
 
     void put(std::string);
+    void put(std::string[], int);
 
     void printSlot(int);
     
