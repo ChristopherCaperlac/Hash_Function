@@ -2,7 +2,7 @@ all: clean build
 	make run
 
 build:
-	g++ -o encoder main.cpp hash.cpp
+	g++ -o encoder main.cpp hash.cpp hashMap.cpp linkedList.cpp
 
 clean:
 	rm encoder -f
