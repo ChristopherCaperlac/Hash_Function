@@ -56,7 +56,7 @@ int main() {
         printf("Slot %d: %d\n", i, DC_Table->getSlotSize(i));
     }
 
-    cout << "==== Printing the standard variance =====" << endl;
+    cout << "==== Printing the standard deviation =====" << endl;
 
     printf("%f\n", DC_Table->getStdDev());
 
