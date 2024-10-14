@@ -8,6 +8,7 @@ Your team alias: Key and Value DC
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include "hash.h"
 #include "hashMap.h"
 #include "linkedList.h"
 using namespace std;
@@ -39,13 +40,14 @@ int main() {
 
     // Your time to shine starts now
 
-    
+    Hash hash1(texts, k, n);
 
     cout << "==== Printing the contents of the first 5 slots ====" << endl;
-
+    hash1.printSlots();
     cout << "==== Printing the slot lengths ====" << endl;
-
+    hash1.printLengths();
     cout << "==== Printing the standard variance =====" << endl;
+    hash1.standardDeviation();
 
     return 0;
 }
