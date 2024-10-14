@@ -1,8 +1,8 @@
-#include "hashMap.h"
+#include "hash.h"
 #include <cmath>
 
 
-HashMap::HashMap(int numOfSlots) {
+HashTable::HashTable(int numOfSlots) {
 
   this->slotList = new LinkedList*[numOfSlots];
   for (int i = 0; i < numOfSlots; i++) {
@@ -12,7 +12,7 @@ HashMap::HashMap(int numOfSlots) {
 
 }
 
-HashMap::~HashMap() {
+HashTable::~HashTable() {
 
   for (int i = 0; i < numOfSlots; i++) {
     delete this->slotList[i];
@@ -21,7 +21,7 @@ HashMap::~HashMap() {
 
 }
 
-int HashMap::hashFunction(std::string text) {
+int HashTable::hashFunction(std::string text) {
 
   unsigned long hashValue = 17;
 
@@ -36,29 +36,29 @@ int HashMap::hashFunction(std::string text) {
   
 }
 
-void HashMap::put(std::string inputString) {
+void HashTable::put(std::string inputString) {
   int slotIndex = this->hashFunction(inputString);
   LinkedList* slot = this->slotList[slotIndex];
   slot->addToFront(inputString);
 }
 
-void HashMap::put(std::string tokens[], int numOfTokens) {
+void HashTable::put(std::string tokens[], int numOfTokens) {
   for (int i = 0; i < numOfTokens; i++) {
       this->put(tokens[i]);
   }
 }
 
-void HashMap::printSlot(int slotIndex) {
+void HashTable::printSlot(int slotIndex) {
   LinkedList* slot = this->slotList[slotIndex];
   slot->printValues();
 }
 
-int HashMap::getSlotSize(int slotIndex) {
+int HashTable::getSlotSize(int slotIndex) {
   LinkedList* slot = this->slotList[slotIndex];
   return slot->getSize();
 }
 
-double HashMap::getStdDev() {
+double HashTable::getStdDev() {
 
   double mean = 0;
   double variance = 0;

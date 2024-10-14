@@ -1,13 +1,13 @@
-all: clean build run
+all: clean build
 
-build: main.o hashMap.o linkedList.o
-	g++ main.o hashMap.o linkedList.o -o encoder
+build: main.o hash.o linkedList.o
+	g++ main.o hash.o linkedList.o -o encoder
 
-main.o: hashMap.h linkedList.h
+main.o: hash.h linkedList.h
 	g++ -c main.cpp
 
-hashMap.o: hashMap.h
-	g++ -c hashMap.cpp
+hash.o: hash.h
+	g++ -c hash.cpp
 
 linkedList.o: linkedList.h
 	g++ -c linkedList.cpp

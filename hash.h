@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef HASHMAP_H
-#define HASHMAP_H
+#ifndef HASH_H
+#define HASH_H
 #include "linkedList.h"
 
-class HashMap {
+class HashTable {
 
   private:
     
@@ -14,8 +14,8 @@ class HashMap {
 
   public:
     
-    HashMap(int);
-    ~HashMap();
+    HashTable(int);
+    ~HashTable();
 
     void put(std::string);
     void put(std::string[], int);
