@@ -8,7 +8,8 @@ Your team alias: Key and Value DC
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "hash.h"
+#include "hashMap.h"
+#include "linkedList.h"
 using namespace std;
 
 int main() {

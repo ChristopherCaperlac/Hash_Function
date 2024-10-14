@@ -1,3 +1,7 @@
+#pragma once
+
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 #include <string>
 
 class Node {
@@ -38,3 +42,5 @@ class LinkedList {
         void printValues();
 
 };
+
+#endif

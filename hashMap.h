@@ -1,3 +1,7 @@
+#pragma once
+
+#ifndef HASHMAP_H
+#define HASHMAP_H
 #include "linkedList.h"
 
 class HashMap {
@@ -21,3 +25,5 @@ class HashMap {
     double getStdDev();
 
 };
+
+#endif

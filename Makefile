@@ -1,11 +1,19 @@
-all: clean build
-	make run
+all: clean build run
 
-build:
-	g++ -o encoder main.cpp hash.cpp
+build: main.o hashMap.o linkedList.o
+	g++ main.o hashMap.o linkedList.o -o encoder
+
+main.o: hashMap.h linkedList.h
+	g++ -c main.cpp
+
+hashMap.o: hashMap.h
+	g++ -c hashMap.cpp
+
+linkedList.o: linkedList.h
+	g++ -c linkedList.cpp
 
 clean:
-	rm encoder -f
+	rm encoder *.o -f
 
 run:
 	./encoder < ./inputs/sample_input.txt
